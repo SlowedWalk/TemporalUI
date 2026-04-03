@@ -2,7 +2,10 @@
   "name": "temporalui",
   "version": "0.1.0",
   "description": "A UI framework where interfaces have memory and time",
-  "repository": "https://gitlab.com/idetoratojo1/temporalui.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/idetoratojo1/temporalui.git"
+  },
   "license": "MIT",
   "workspaces": [
     "packages/*"
