@@ -1,0 +1,38 @@
+{
+  "name": "temporalui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A UI framework where interfaces have memory and time",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint packages --ext .ts,.tsx",
+    "format": "prettier --write packages/**/*.ts packages/**/*.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^17.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^9.0.0",
+    "jsdom": "^29.0.1",
+    "prettier": "^3.0.0",
+    "rxjs": "^7.8.0",
+    "svelte": "^5.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0",
+    "vue": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@temporalui/core": "^0.1.0"
+  }
+}

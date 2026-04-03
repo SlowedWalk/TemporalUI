@@ -1,0 +1,18 @@
+import { h, defineComponent, type VNode } from 'vue';
+import {
+  TemporalEngine,
+  type TemporalConfig,
+  type Tier,
+} from '@temporalui/core';
+
+export interface TemporalTestProviderProps {
+  engine?: TemporalEngine;
+  config?: TemporalConfig;
+  seedTier?: Tier;
+  children?: VNode | VNode[];
+}
+
+export function createTestEngine(config?: TemporalConfig, seedTier?: Tier): TemporalEngine {
+  const engine = new TemporalEngine({ config });
+  return engine;
+}
