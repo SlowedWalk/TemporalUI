@@ -1,8 +1,9 @@
 {
   "name": "temporalui",
   "version": "0.1.0",
-  "private": true,
   "description": "A UI framework where interfaces have memory and time",
+  "repository": "https://gitlab.com/idetoratojo1/temporalui.git",
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
@@ -13,7 +14,11 @@
     "test:watch": "vitest",
     "lint": "eslint packages --ext .ts,.tsx",
     "format": "prettier --write packages/**/*.ts packages/**/*.tsx",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publish": "npm publish --workspaces --access public"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@angular/compiler": "^17.0.0",

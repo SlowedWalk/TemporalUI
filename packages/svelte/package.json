@@ -2,6 +2,9 @@
   "name": "@temporalui/svelte",
   "version": "0.1.0",
   "type": "module",
+  "description": "Svelte adapter for TemporalUI",
+  "repository": "https://gitlab.com/idetoratojo1/temporalui.git",
+  "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -13,6 +16,9 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsc && tsc --emitDeclarationOnly"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@temporalui/core": "^0.1.0"

@@ -1,0 +1,36 @@
+stages:
+  - build
+  - publish
+
+variables:
+  NPM_CONFIG_CACHE: "$CI_PROJECT_DIR/.npm"
+
+build:
+  stage: build
+  image: node:20
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .npm/
+      - node_modules/
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - packages/*/dist
+
+publish:
+  stage: publish
+  image: node:20
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .npm/
+      - node_modules/
+  script:
+    - npm run publish
+  only:
+    - tags
+  when: manual
